@@ -21,6 +21,10 @@ gource \
     --viewport 1920x1080 \
     ./linux
 
+if [[ $? != 0 ]] || [ ! -s ./linux-gource.ppm ]; then
+    exit 1
+fi
+
 ffmpeg \
     -y \
     -r 60 \
