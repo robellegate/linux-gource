@@ -8,7 +8,14 @@ if [ ! -d ./linux ]; then
     exit 1
 fi
 
+if [ -s ./tags.log ]; then
+    rm ./tags.log
+fi
+
+git -C ./linux log --pretty=format:"%ct|%s released" | grep -P '(?<=\d{10}\|)Linux [\d\.]+ released$' > ./tags.log
+
 gource \
+    --caption-file ./tags.log \
     --default-user-image ./assets/avatars/Tux.png \
     --hide mouse \
     --highlight-user "Linus Torvalds" \

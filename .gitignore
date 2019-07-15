@@ -4,3 +4,7 @@
 *.mp4
 *.ppm
 
+#
+# Top-level generic files
+#
+/tags.log
