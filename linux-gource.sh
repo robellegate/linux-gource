@@ -12,10 +12,12 @@ if [ -s ./tags.log ]; then
     rm ./tags.log
 fi
 
-git -C ./linux log --pretty=format:"%ct|%s released" | grep -P '(?<=\d{10}\|)Linux [\d\.]+ released$' > ./tags.log
+git -C ./linux log --reverse --pretty=format:"%ct|%s released" | grep -P '(?<=\d{10}\|)Linux [\d\.]+ released$' > ./tags.log
 
 gource \
+    --caption-colour FFFF00 \
     --caption-file ./tags.log \
+    --caption-offset 1 \
     --default-user-image ./assets/avatars/Tux.png \
     --hide mouse \
     --highlight-user "Linus Torvalds" \
