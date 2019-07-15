@@ -8,20 +8,18 @@ if [ ! -d ./linux ]; then
     exit 1
 fi
 
-cd ./linux
-
 gource \
-    --default-user-image ../assets/avatars/Tux.png \
+    --default-user-image ./assets/avatars/Tux.png \
+    --hide mouse \
     --highlight-user "Linus Torvalds" \
-    --logo ../assets/thelinuxfoundation.png \
+    --logo ./assets/thelinuxfoundation.png \
     --output-framerate 60 \
-    --output-ppm-stream ../linux-gource.ppm \
+    --output-ppm-stream ./linux-gource.ppm \
     --title "The Linux Kernel" \
-    --user-image-dir ../assets/avatars \
+    --user-image-dir ./assets/avatars \
     --user-scale 5 \
-    --viewport 1920x1080 
-
-cd ../
+    --viewport 1920x1080 \
+    ./linux
 
 ffmpeg \
     -y \
