@@ -1,2 +1,6 @@
-linux-gource.ppm
-linux-gource.mp4
+#
+# Normal rules (sorted alphabetically)
+#
+*.mp4
+*.ppm
+

@@ -1,0 +1,10 @@
+#
+# Ignore all avatars fetched from Gravatar
+#
+*.png
+
+#
+# Don't ignore Linus Torvalds' avatar nor the default Tux avatar
+#
+!Linus Torvalds.png
+!Tux.png
